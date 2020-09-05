@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:wingsteam/home.dart';
 import 'package:wingsteam/signup/login.dart';
 import 'package:wingsteam/signup/teacher.dart';
@@ -24,7 +25,39 @@ class MyApp extends StatelessWidget {
         '/' : (BuildContext context) => new RootPage(auth: Auth()),
         'allclassTeacher' :(BuildContext context) => new AllClassTeacher(),
       },
+      home: SampleAppPage(),
     );
   }
 }
 
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  static const platform = const MethodChannel('app.channel.shared.data');
+  String dataShared = "No data";
+
+  @override
+  void initState() {
+    super.initState();
+    getSharedText();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text(dataShared)));
+  }
+
+  getSharedText() async {
+    var sharedData = await platform.invokeMethod("getSharedText");
+    if (sharedData != null) {
+      setState(() {
+        dataShared = sharedData;
+      });
+    }
+  }
+}
