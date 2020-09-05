@@ -1,5 +1,6 @@
 # Plugins to include in the build.
 GENERATED_PLUGINS=\
+	agora_rtc_engine \
 	path_provider_linux \
 
 GENERATED_PLUGINS_DIR=flutter/ephemeral/.plugin_symlinks
@@ -18,6 +19,7 @@ PLUGIN_CPPFLAGS=$(foreach plugin,$(GENERATED_PLUGINS),\
 # Targets
 
 # Implicit rules don't match phony targets, so list plugin builds explicitly.
+$(OUT_DIR)/libagora_rtc_engine_plugin.so: | agora_rtc_engine
 $(OUT_DIR)/libpath_provider_linux_plugin.so: | path_provider_linux
 
 .PHONY: $(GENERATED_PLUGINS)

@@ -92,9 +92,9 @@ class _AllClassTeacherState extends State<AllClassTeacher> {
                 ),
                 SizedBox(width: 25,),
               FlatButton(
-                  onPressed:(){
-
-              },
+                  onPressed: () async {
+                  Navigator.pushNamed(context, 'call');
+                  },
                   child:Text(
                "Start Class",
                 style: TextStyle(color: Colors.red, fontSize: 15),
