@@ -4,6 +4,7 @@ import 'package:wingsteam/signup/login.dart';
 import 'package:wingsteam/signup/teacher.dart';
 import 'signup/root_page.dart';
 import 'signup/auth.dart';
+import 'Allclass/allclass.dart';
 void main() {
   runApp(MyApp());
 }
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder> {
         '/home': (BuildContext context) => new Home(),
         '/' : (BuildContext context) => new RootPage(auth: Auth()),
+        'allclassTeacher' :(BuildContext context) => new AllClassTeacher(),
       },
     );
   }
