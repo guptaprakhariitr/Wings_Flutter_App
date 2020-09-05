@@ -9,6 +9,7 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wingsteam/signup/auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class TeacherHome extends StatefulWidget{
   @override
   _TeacherHomeState createState() => _TeacherHomeState();
@@ -31,7 +32,15 @@ class _TeacherHomeState extends State<TeacherHome> {
             "role" : _heading,
             "teacher":_teacher
           }).then((value){
-            setState(() {
+            setState(() async{
+              await Fluttertoast.showToast(
+                  msg: "Class Created",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIos: 2,
+                  backgroundColor: Colors.green,
+                  textColor: Colors.white,
+                  fontSize: ScreenUtil().setSp(12, allowFontScalingSelf: true));
             });
       });
     });
