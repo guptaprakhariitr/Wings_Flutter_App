@@ -52,7 +52,7 @@ class _TeacherHomeState extends State<TeacherHome> {
     return Scaffold(
     body:  Column(
       children: <Widget>[
-        showHeadinglInput("Class Name or Lecture Topic",0),
+        showHeadinglInput("Code For Creating Class",0),
            Padding(
              padding: EdgeInsets.fromLTRB(16, 40, 0, 20),
              child: Row(

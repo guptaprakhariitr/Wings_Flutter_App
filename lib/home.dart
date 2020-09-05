@@ -8,6 +8,8 @@ import 'signup/root_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'homepage/student.dart';
 import 'homepage/teacher.dart';
+import 'package:local_auth/local_auth.dart';
+
 class Home extends StatefulWidget {
   static String routeName="home";
    Widget homesc = Scaffold(
