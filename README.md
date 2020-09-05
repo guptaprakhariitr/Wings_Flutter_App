@@ -1,5 +1,5 @@
-# wingsteam
-
+# WINGS APP
+<img src="https://github.com/guptaprakhariitr/Wings_Flutter_App/blob/readme/logo.jpg" alt="Logo of our app">
 A Flutter application for making online education easy for specially-abled children.
 
 [Link To our presentation](https://docs.google.com/presentation/d/1CU-MBZXfphe8qJ_o14m__7aaKH0led_EGlnFomz-g5I/edit?usp=sharing)
