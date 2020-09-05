@@ -84,7 +84,6 @@ class _StudentHomeState extends State<StudentHome> {
         Navigator.pushNamed(
             context, 'call', arguments: ScreenArguments("std", listTopic2[0]));
       }
-
     },
   );
   setState(() {
@@ -151,6 +150,13 @@ class _StudentHomeState extends State<StudentHome> {
     _speak();
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Long Press"
+
+        ),
+        backgroundColor: Colors.indigo[800],
+      ),
       body:homesc,
     );
   }
