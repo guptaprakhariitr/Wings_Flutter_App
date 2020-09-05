@@ -126,16 +126,10 @@ class _LoginState extends State<Login> {
   Widget Logo() {
     return Column(
       children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(
-              left: ScreenUtil().setWidth(145),
-              top: ScreenUtil().setWidth(70),
-              right: ScreenUtil().setWidth(145)),
-          child: new SvgPicture.asset(
-            'assets/cap.jpg',
-            allowDrawingOutsideViewBox: true,
+          Container(
+            padding: EdgeInsets.fromLTRB(25, 60, 0, 0),
+            child: Image.asset('assets/cap.jpg',height: 100,width: 100),
           ),
-        ),
         Container(
           margin: EdgeInsets.only(
             top: ScreenUtil().setWidth(15),
