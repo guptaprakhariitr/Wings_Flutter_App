@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:wingsteam/pages/index.dart';
 import 'package:wingsteam/signup/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -93,7 +94,7 @@ class _AllClassTeacherState extends State<AllClassTeacher> {
                 SizedBox(width: 25,),
               FlatButton(
                   onPressed: () async {
-                  Navigator.pushNamed(context, 'call');
+                  Navigator.pushNamed(context, 'call',arguments: ScreenArguments("title", role));
                   },
                   child:Text(
                "Start Class",
