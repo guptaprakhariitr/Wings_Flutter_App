@@ -1,11 +1,53 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:wingsteam/homepage/teacher.dart';
 import 'signup/teacher.dart';
 import 'signup/auth.dart';
 import 'signup/root_page.dart';
-class Home extends StatelessWidget {
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'homepage/student.dart';
+import 'homepage/teacher.dart';
+class Home extends StatefulWidget {
   static String routeName="home";
+   Widget homesc = Scaffold(
+     body: Container(
+       alignment: Alignment.center,
+       child: CircularProgressIndicator(),
+     ),
+   );
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   Auth auth = new Auth();
-  // This widget is the root of your application.
+  final firestoreInstance = Firestore.instance;
+  void setProfile() async{
+    Future<FirebaseUser> firebaseUser= auth.getCurrentUser();
+    await firebaseUser.then((value) {
+      firestoreInstance.collection("users").document(value.email).get().then((value){
+        if(value.data["role"]=="Teacher"){
+          widget.homesc = TeacherHome();
+          setState(() {
+
+          });
+        }
+        else{
+          widget.homesc = StudentHome();
+          setState(() {
+          });
+        }
+      });
+    });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setProfile();
+  }
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -31,7 +73,13 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
+        SliverToBoxAdapter(
+            child: Container(
+                height: 900,
+                child: widget.homesc)
+        ),
       ],
+
     );
   }
 
