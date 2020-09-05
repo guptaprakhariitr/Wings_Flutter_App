@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
         '/' : (BuildContext context) => new RootPage(auth: Auth()),
         'allclassTeacher' :(BuildContext context) => new AllClassTeacher(),
       },
-      home: SampleAppPage(),
     );
   }
 }
