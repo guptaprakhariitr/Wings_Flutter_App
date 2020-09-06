@@ -17,7 +17,7 @@ This project is a starting point for a Flutter application.
 
 Case 1: Clone the repository and open the project in Android Studio.
 Run the App.
-
+Note : Flutter_svg 17.02 Package has dependency error with Lastest Flutter Release. If you do not have latest Flutter realese then just clone the repository else after cloning replace  'flutter_svg: ^0.17.4' by 'flutter_svg: ^0.18.0' in pubspec.yaml
 # OR
 
 Case 2: Install the Apk in the mobile phone.
